@@ -22,3 +22,6 @@
 - **0.4.0 : 2012.10.07**
 	- **Features**
 	- Database connection internally stored in RAM, thanks to [wangqiaoshi](https://github.com/wangqiaoshi).
+- **0.4.1 : 2012.10.07**
+	- **Features**
+	- Cancel close the conection to database, when close the connection wil cause each operation communicate with the database cost more time.
