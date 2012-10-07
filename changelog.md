@@ -19,3 +19,6 @@
 - **0.3.1 : 2012.10.07**
 	- **Features**
 	- Add, Edit & Delete function in User & Book menu seems work fine.
+- **0.4.0 : 2012.10.07**
+	- **Features**
+	- Database connection internally stored in RAM, thanks to [wangqiaoshi](https://github.com/wangqiaoshi).
