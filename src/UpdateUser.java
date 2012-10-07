@@ -129,7 +129,7 @@ import javax.swing.*;
 							JOptionPane.showMessageDialog(null, "Grade cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);	
 						else if (k > -1){
 							JOptionPane.showMessageDialog(null, "Edit Successful!", "Edit",JOptionPane.WARNING_MESSAGE);
-							conn1.close();
+							//conn1.close();
 							}else
 								JOptionPane.showMessageDialog(null, "Edit Failed!", "Edit",JOptionPane.WARNING_MESSAGE);
 						}catch(ClassNotFoundException ce){

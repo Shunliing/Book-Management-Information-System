@@ -127,7 +127,7 @@ public class DeleteUser extends JPanel{
 						JOptionPane.showMessageDialog(null, "Grade cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);
 					else if (k > -1){
 						JOptionPane.showMessageDialog(null, "Delete Successful!", "Delete",JOptionPane.WARNING_MESSAGE);
-						conn1.close();
+						//conn1.close();
 						} else
 							JOptionPane.showMessageDialog(null, "Delete Failed!", "Delete",JOptionPane.WARNING_MESSAGE);									
 					}catch(ClassNotFoundException ce){

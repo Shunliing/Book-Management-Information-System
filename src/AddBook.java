@@ -90,8 +90,11 @@ public class AddBook extends JPanel{
 						JOptionPane.showMessageDialog(null, "ISBN cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
 					else if(price.getText().toString().equals(""))
 						JOptionPane.showMessageDialog(null, "Price cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
-					else
+					else if (k > -1){
 						JOptionPane.showMessageDialog(null, "Add Successful!", "Add", JOptionPane.WARNING_MESSAGE);
+						//conn.close();
+					}else
+						JOptionPane.showMessageDialog(null, "Add Failed!", "Add", JOptionPane.WARNING_MESSAGE);
         		}catch (ClassNotFoundException ce){
 					System.out.println("SQLException:" + ce.getMessage());
 				}catch (SQLException ex){

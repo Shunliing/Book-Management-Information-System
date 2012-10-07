@@ -98,7 +98,7 @@ public class AddUser extends JPanel {
 						JOptionPane.showMessageDialog(null, "Grade cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
 					else if (k > -1){
 						JOptionPane.showMessageDialog(null, "Add Successful!", "Add", JOptionPane.WARNING_MESSAGE);
-						conn.close();
+						//conn.close();
 					}else
 						JOptionPane.showMessageDialog(null, "Add Failed!", "Add", JOptionPane.WARNING_MESSAGE);
 				}catch (ClassNotFoundException ce){
