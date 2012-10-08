@@ -81,7 +81,7 @@ public class CheckUser extends JPanel implements ActionListener{
 			else if(numorname.equals(""))
 				JOptionPane.showMessageDialog(null, "Check Query cannot be Empty!", "Check", JOptionPane.WARNING_MESSAGE);
 			else
-				connect("searchuser" + "/" + searchf + "/" + numorname);
+				connect("checkuser" + "/" + searchf + "/" + numorname);
 		}		
 	}
 	
@@ -90,7 +90,7 @@ public class CheckUser extends JPanel implements ActionListener{
 		Socket socket;
 		try{
 			//create a Socket class object, specify the port number 3306
-			socket = new Socket(InetAddress.getByName(""), 3306);
+			socket = new Socket(InetAddress.getByName("210.30.108.66"), 3306);
 			//create data input and output streams object
 			output = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
 			input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
