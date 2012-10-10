@@ -25,3 +25,6 @@
 - **0.4.1 : 2012.10.07**
 	- **Features**
 	- Cancel close the conection to database, when close the connection wil cause each operation communicate with the database cost more time.
+- **0.4.2 : 2012.10.10**
+	- **Features**
+	- Add PreparedSQL module, for test writting sth. into DB.
