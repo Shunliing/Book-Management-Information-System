@@ -27,12 +27,12 @@ public class CheckLent extends JPanel implements ActionListener{
 	String message = "";
 	
 	public CheckLent(){
-		searchlabel = new JLabel("Check Lent Book:");
-		searchfield = new JTextField("Please Input Check Query");
+		searchlabel = new JLabel("查询借阅书目:");
+		searchfield = new JTextField("请输入查询条件");
 		searchcbo = new JComboBox();
-		button1 = new JButton("Check");
-		searchcbo.addItem("Check with Book ID");
-		searchcbo.addItem("Check with User ID");
+		button1 = new JButton("查询");
+		searchcbo.addItem("按图书编号查询");
+		searchcbo.addItem("按用户 ID 查询");
 		//jp.setLayout(new FlowLayout());
 		//jp.add(searchlabel);
 		//jp.add(searchfield);
@@ -50,12 +50,12 @@ public class CheckLent extends JPanel implements ActionListener{
 		
 		this.setLayout(new BorderLayout());
 		this.add(jp,BorderLayout.NORTH);
-		vector2.add("Book");
-		vector2.add("User");
-		vector2.add("Lent time");
-		vector2.add("Time Should be Returned");
-		vector2.add("Returned Time");
-		vector2.add("Returned or Not");
+		vector2.add("书名");
+		vector2.add("用户名");
+		vector2.add("借出时间");
+		vector2.add("应还时间");
+		vector2.add("还书时间");
+		vector2.add("是否退还");
 		button1.addActionListener(this);
 		this.setSize(500, 500);
 	}
@@ -67,10 +67,10 @@ public class CheckLent extends JPanel implements ActionListener{
 		 searchf = searchfield.getText().trim();
 		 {
 			 if(searchf.equals(""))
-				 JOptionPane.showMessageDialog(null, "Check Query cannot be Empty!", "Check", JOptionPane.WARNING_MESSAGE);
+				 JOptionPane.showMessageDialog(null, "查询条件不能为空！", "查询", JOptionPane.WARNING_MESSAGE);
 			 else
 				 if(numorname.equals(""))
-					 JOptionPane.showMessageDialog(null, "Check Query cannot be Empty!", "Check", JOptionPane.WARNING_MESSAGE);
+					 JOptionPane.showMessageDialog(null, "查询条件不能为空！", "查询", JOptionPane.WARNING_MESSAGE);
 				 else
 					 connect("searchbook" + "/" + searchf + "/" + numorname);
 		 }
@@ -101,13 +101,13 @@ public class CheckLent extends JPanel implements ActionListener{
 				 jspane = new JScrollPane(table);
 				 this.add(jspane,BorderLayout.CENTER);
 				 }catch(IOException e){
-					 System.out.println("Unable to Obtain Information");
+					 System.out.println("无法获取图书信息");
 					 }
 			 output.close();
 			 input.close();
 			 socket.close();
 			 }catch(EOFException eof){
-				 System.out.println("Server Outages");
+				 System.out.println("服务器中断");
 				 }catch(IOException e){
 					 e.printStackTrace();
 					 }

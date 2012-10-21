@@ -13,12 +13,12 @@ public class LendBook extends JPanel{
 	
 	public LendBook(){
 		this.setLayout(null);
-		jbnumber = new JLabel("Book ID:", SwingConstants.RIGHT);
+		jbnumber = new JLabel("图书编号:", SwingConstants.RIGHT);
 		bnumber = new JTextField();
-		junumber = new JLabel("User ID:", SwingConstants.RIGHT);
+		junumber = new JLabel("用户 ID:", SwingConstants.RIGHT);
 		unumber = new JTextField();
-		button1 = new JButton("Lend");
-		button2 = new JButton("Cancel");
+		button1 = new JButton("借阅");
+		button2 = new JButton("取消");
 		jbnumber.setBounds(55, 80, 90, 26);
 		junumber.setBounds(55, 120, 90, 26);
 		bnumber.setBounds(160, 80, 160, 26);
@@ -36,9 +36,9 @@ public class LendBook extends JPanel{
 	    button1.addActionListener(new ActionListener(){
 	       	public void actionPerformed(ActionEvent e){
 	       		if(bnumber.getText().toString().equals(""))
-	        		JOptionPane.showMessageDialog(null, "Book ID cannot be Empty!", "Lend", JOptionPane.WARNING_MESSAGE);
+	        		JOptionPane.showMessageDialog(null, "图书编号不能为空！", "借阅", JOptionPane.WARNING_MESSAGE);
 	        	else if(unumber.getText().toString().equals(""))
-	            	JOptionPane.showMessageDialog(null, "User ID cannot be Empty!", "Lend", JOptionPane.WARNING_MESSAGE);
+	            	JOptionPane.showMessageDialog(null, "用户 ID 不能为空！", "借阅", JOptionPane.WARNING_MESSAGE);
 	       		}
 	       	});
 	    

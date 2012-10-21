@@ -28,12 +28,12 @@ public class CheckBook extends JPanel implements ActionListener{
 	String message = "";
 	
 	public CheckBook(){
-		searchlabel = new JLabel("Check Book Information:");
-		searchfield = new JTextField("Please Input the Query");
+		searchlabel = new JLabel("查询图书信息:");
+		searchfield = new JTextField("请输入查询条件");
 		searchcbo = new JComboBox();
-		button1 = new JButton("Check");
-		searchcbo.addItem("Check with Book ID");
-		searchcbo.addItem("Check with Book Name");
+		button1 = new JButton("查询");
+		searchcbo.addItem("按图书编号查询");
+		searchcbo.addItem("按图书名查询");
 
 		//jp.setLayout(new FlowLayout());
 
@@ -55,13 +55,13 @@ public class CheckBook extends JPanel implements ActionListener{
 		this.setLayout(new BorderLayout());
 		this.add(jp,BorderLayout.NORTH);
 		 
-		vector2.add("Seial Number");
-		vector2.add("Book Name");
-		vector2.add("Author");
-		vector2.add("Publishing House");
+		vector2.add("图书编号");
+		vector2.add("图书名");
+		vector2.add("作者");
+		vector2.add("出版社");
 		vector2.add("ISBN");
-		vector2.add("Price");
-		vector2.add("Lent or Not");
+		vector2.add("价格");
+		vector2.add("是否借出");
 		 
 		button1.addActionListener(this);
 		this.setSize(500, 500);		
@@ -72,9 +72,9 @@ public class CheckBook extends JPanel implements ActionListener{
 		numorname = searchcbo.getSelectedItem().toString();
 		searchf = searchfield.getText().trim();{
 			if(searchf.equals(""))
-				JOptionPane.showMessageDialog(null, "Check Query cannot be Empty!", "Check", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "查询条件不能为空！", "查询", JOptionPane.WARNING_MESSAGE);
 			else if(numorname.equals(""))
-				JOptionPane.showMessageDialog(null, "Check Query cannot be Empty!", "Check", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "查询条件不能为空！", "查询", JOptionPane.WARNING_MESSAGE);
 			}
 		}
 	public static void main(String[] args){

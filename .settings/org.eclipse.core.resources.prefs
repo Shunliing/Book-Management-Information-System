@@ -1,5 +1,16 @@
-#Sat Oct 06 10:46:24 GMT+08:00 2012
+#Mon Oct 15 22:24:55 GMT+08:00 2012
 eclipse.preferences.version=1
+encoding//src/AddBook.java=UTF-8
+encoding//src/AddUser.java=UTF-8
 encoding//src/BookMain.java=UTF-8
+encoding//src/CheckBook.java=UTF-8
+encoding//src/CheckLent.java=UTF-8
+encoding//src/CheckUser.java=UTF-8
+encoding//src/DeleteBook.java=UTF-8
 encoding//src/DeleteUser.java=UTF-8
+encoding//src/LendBook.java=UTF-8
 encoding//src/Login.java=UTF-8
+encoding//src/PreparedSQL.java=UTF-8
+encoding//src/ReturnBook.java=UTF-8
+encoding//src/UpdateBook.java=UTF-8
+encoding//src/UpdateUser.java=UTF-8

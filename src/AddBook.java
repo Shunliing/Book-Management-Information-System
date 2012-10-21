@@ -14,20 +14,20 @@ public class AddBook extends JPanel{
 
 	public AddBook(){
 		this.setLayout(null);
-        jnumber = new JLabel("Book ID:", SwingConstants.RIGHT);
+        jnumber = new JLabel("图书编号:", SwingConstants.RIGHT);
         number = new JTextField();
-        jbookname = new JLabel("Book Name:", SwingConstants.RIGHT);
+        jbookname = new JLabel("图书名:", SwingConstants.RIGHT);
         bookname = new JTextField();
-        jpublish = new JLabel("Publishing House:", SwingConstants.RIGHT);
+        jpublish = new JLabel("出版社:", SwingConstants.RIGHT);
         publish = new JTextField();
-        jauthor = new JLabel("Author:", SwingConstants.RIGHT);
+        jauthor = new JLabel("作者:", SwingConstants.RIGHT);
         author = new JTextField();
         jisbn = new JLabel("ISBN:", SwingConstants.RIGHT);
         isbn = new JTextField();
-        jprice = new JLabel("Price:", SwingConstants.RIGHT);
+        jprice = new JLabel("价格:", SwingConstants.RIGHT);
         price = new JTextField();
-        button1 = new JButton("Add");
-        button2 = new JButton("Cancel");
+        button1 = new JButton("添加");
+        button2 = new JButton("取消");
 
         jnumber.setBounds(55, 20, 90, 26);
         jbookname.setBounds(55, 60, 90, 26);
@@ -79,22 +79,22 @@ public class AddBook extends JPanel{
 					int k = -1;
 					k = conn.insert(sqlstr);
 					if(number.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Book ID cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "图书编号不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if(bookname.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Book Name cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "图书名不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if(publish.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Publishing House cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "出版社不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if(author.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Author cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "作者不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if(isbn.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "ISBN cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ISBN 不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if(price.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Price cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "价格不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if (k > -1){
-						JOptionPane.showMessageDialog(null, "Add Successful!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "添加成功！", "添加", JOptionPane.WARNING_MESSAGE);
 						//conn.close();
 					}else
-						JOptionPane.showMessageDialog(null, "Add Failed!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "添加失败！", "添加", JOptionPane.WARNING_MESSAGE);
         		}catch (ClassNotFoundException ce){
 					System.out.println("SQLException:" + ce.getMessage());
 				}catch (SQLException ex){

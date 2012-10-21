@@ -20,9 +20,9 @@ public class PreparedSQL {
 	    		stm.execute();
 		    }
 		}catch(ClassNotFoundException e){
-		       throw new Exception("Database Driver Not Found" + e.getMessage());
+		       throw new Exception("数据库驱动未找到" + e.getMessage());
 		}catch(SQLException e){
-		       throw new Exception("Database Not Connected" + e.getMessage());
+		       throw new Exception("数据库未连接" + e.getMessage());
 		}
 	}
 

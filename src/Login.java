@@ -15,20 +15,20 @@ public class Login extends JFrame{
 	//Constructor
 	public Login(){
 		
-		frame = new JFrame("Login");
+		frame = new JFrame("登录");
 		Container content = frame.getContentPane();
 		//Content Pane Layout
 		content.setLayout(new GridLayout(3, 2, 20, 20));
-		JLb1 = new JLabel("Username");
-		JLb2 = new JLabel("Password");
+		JLb1 = new JLabel("用户名:");
+		JLb2 = new JLabel("密   码:");
 		//Label Layout
 		JLb1.setHorizontalAlignment(SwingConstants.CENTER);
 		JLb2.setHorizontalAlignment(SwingConstants.CENTER);
 		jtflduser = new JTextField();
 		jtpwdfld = new JPasswordField();
 		//Button Declaration
-		Ok_btn = new JButton("OK");
-		Cancel_btn = new JButton("Cancel");
+		Ok_btn = new JButton("登录");
+		Cancel_btn = new JButton("取消");
 		//Add Action Listener for Button
 		Ok_btn.addActionListener(new ActionHandler());
 		Cancel_btn.addActionListener(new ActionHandler());
@@ -56,7 +56,7 @@ public class Login extends JFrame{
 			try{
 				if(obj.equals(Ok_btn)){
 					if(str1.equals("")){
-						JOptionPane.showMessageDialog(frame, "Username cannot be Empty!");
+						JOptionPane.showMessageDialog(frame, "用户名不能为空！");
 					}
 					//create database connection
 					JdbcFiles conn = new JdbcFiles();
@@ -64,14 +64,14 @@ public class Login extends JFrame{
 					ResultSet result = conn.executeQuery(sqlStr);
 					if(result.next()){
 					//if(str1.equals("elilien")&&str2.equals("test")){
-						JOptionPane.showMessageDialog(frame,"Login Successful!");
+						JOptionPane.showMessageDialog(frame,"登录成功！");
 						//Open Book Management Information System Main Window
 						BookMain bk = new BookMain();
 						bk.go();
 						frame.dispose();
 										
 					}else{
-						JOptionPane.showMessageDialog(frame,"Invalid Username or Password ;-(");						
+						JOptionPane.showMessageDialog(frame,"用户名或密码无效 ;-(");						
 					}					
 				}else if(obj.equals(Cancel_btn)){
 					System.exit(0);					

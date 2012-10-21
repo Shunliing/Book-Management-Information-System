@@ -17,20 +17,20 @@ public class UpdateBook extends JPanel{
 
 	public UpdateBook(){
 		this.setLayout(null);
-        jnumber = new JLabel("Seial Number:", SwingConstants.RIGHT);
+        jnumber = new JLabel("图书编号:", SwingConstants.RIGHT);
         number = new JTextField();
-        jbookname = new JLabel("Book Name:", SwingConstants.RIGHT);
+        jbookname = new JLabel("图书名:", SwingConstants.RIGHT);
         bookname = new JTextField();
-        jpublish = new JLabel("Publishing House:", SwingConstants.RIGHT);
+        jpublish = new JLabel("出版社:", SwingConstants.RIGHT);
         publish = new JTextField();
-        jauthor = new JLabel("Author:", SwingConstants.RIGHT);
+        jauthor = new JLabel("作者:", SwingConstants.RIGHT);
         author = new JTextField();
         jisbn = new JLabel("ISBN:", SwingConstants.RIGHT);
         isbn = new JTextField();
-        jprice = new JLabel("Price:", SwingConstants.RIGHT);
+        jprice = new JLabel("价格:", SwingConstants.RIGHT);
         price = new JTextField();
-        button1 = new JButton("Check");
-        button2 = new JButton("Edit");
+        button1 = new JButton("查询");
+        button2 = new JButton("修改");
 
         jnumber.setBounds(55, 20, 90, 26);
         jbookname.setBounds(55, 100, 90, 26);
@@ -72,7 +72,7 @@ public class UpdateBook extends JPanel{
         	public void actionPerformed(ActionEvent e){
         		try{
         			if(number.getText().toString().equals(""))
-            			JOptionPane.showMessageDialog(null, "Book ID cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);
+            			JOptionPane.showMessageDialog(null, "图书编号不能为空！","修改",JOptionPane.WARNING_MESSAGE);
         			String sqlstr1;
 					JdbcFiles conn=new JdbcFiles();
 					sqlstr1="select number,bookname,publish,author,isbn,price from books where number='"+number.getText()+"'";
@@ -91,7 +91,7 @@ public class UpdateBook extends JPanel{
 						    price.setEnabled(true);
 						    }
 						}else
-							JOptionPane.showMessageDialog(null, "Book Information Not Found.","Edit",JOptionPane.WARNING_MESSAGE);
+							JOptionPane.showMessageDialog(null, "图书信息未找到！","修改",JOptionPane.WARNING_MESSAGE);
 					}catch (ClassNotFoundException ce){
 						System.out.println("SQLException:" + ce.getMessage());
 						}catch (SQLException ex){
@@ -111,22 +111,22 @@ public class UpdateBook extends JPanel{
 					JdbcFiles conn1 = new JdbcFiles();
 					k = conn1.insert(sqlstr2);
 					if(number.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Seial Number cannot be Empty!", "Edit", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "图书编号不能为空！", "修改", JOptionPane.WARNING_MESSAGE);
 					else if(bookname.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Book Name cannot be Empty!", "Edit", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "图书名不能为空！", "修改", JOptionPane.WARNING_MESSAGE);
 					else if(publish.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Publishing House cannot be Empty!", "Edit", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "出版社不能为空！", "修改", JOptionPane.WARNING_MESSAGE);
 					else if(author.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Author cannot be Empty!", "Edit", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "作者不能为空！", "修改", JOptionPane.WARNING_MESSAGE);
 					else if(isbn.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "ISBN cannot be Empty!", "Edit", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ISBN 不能为空！", "修改", JOptionPane.WARNING_MESSAGE);
 					else if(price.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Price cannot be Empty!", "Edit", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "价格不能为空！", "修改", JOptionPane.WARNING_MESSAGE);
 					else if (k > -1){
-						JOptionPane.showMessageDialog(null, "Edit Successful!", "Edit",JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "修改成功！", "修改",JOptionPane.WARNING_MESSAGE);
 						//conn1.close();
 						}else
-							JOptionPane.showMessageDialog(null, "Edit Failed!", "Edit",JOptionPane.WARNING_MESSAGE);
+							JOptionPane.showMessageDialog(null, "修改失败！", "修改",JOptionPane.WARNING_MESSAGE);
 				}catch(ClassNotFoundException ce){
 					System.out.println("SQLException:" + ce.getMessage());
 				}catch(SQLException ex){

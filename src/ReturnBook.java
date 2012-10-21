@@ -12,10 +12,10 @@ public class ReturnBook extends JPanel{
 	String message = "";
 	public ReturnBook(){
 		this.setLayout(null);
-		jbnumber = new JLabel("Book ID:", SwingConstants.RIGHT);
+		jbnumber = new JLabel("图书编号:", SwingConstants.RIGHT);
 		bnumber = new JTextField();
-		button1 = new JButton("Return");
-		button2 = new JButton("Cancel");
+		button1 = new JButton("归还");
+		button2 = new JButton("取消");
 		jbnumber.setBounds(55, 100, 90, 26);
 		bnumber.setBounds(160, 100, 160, 26);
 		button1.setBounds(115, 145, 80, 26);
@@ -29,7 +29,7 @@ public class ReturnBook extends JPanel{
 	    button1.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
 	    		if(bnumber.getText().toString().equals(""))
-	    			JOptionPane.showMessageDialog(null, "Book ID cannot be Empty!", "Return", JOptionPane.WARNING_MESSAGE);
+	    			JOptionPane.showMessageDialog(null, "图书编号不能为空！", "归还", JOptionPane.WARNING_MESSAGE);
 	    		}
 	    	});
 	    

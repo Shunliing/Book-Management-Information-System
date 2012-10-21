@@ -14,20 +14,20 @@ public class AddUser extends JPanel {
 	
 	public AddUser(){
 		this.setLayout(null);
-		jnumber = new JLabel("User ID:", SwingConstants.RIGHT);
+		jnumber = new JLabel("用户 ID:", SwingConstants.RIGHT);
 		number = new JTextField();
-		jname = new JLabel("Name:", SwingConstants.RIGHT);
+		jname = new JLabel("用户名:", SwingConstants.RIGHT);
 		name = new JTextField();
-		jpassword = new JLabel("Password:", SwingConstants.RIGHT);
+		jpassword = new JLabel("密码:", SwingConstants.RIGHT);
 		password = new JPasswordField();
-		jcollege = new JLabel("College:", SwingConstants.RIGHT);
+		jcollege = new JLabel("学院:", SwingConstants.RIGHT);
 		college = new JTextField();
-		jsubject = new JLabel("Subject:", SwingConstants.RIGHT);
+		jsubject = new JLabel("专业:", SwingConstants.RIGHT);
 		subject = new JTextField();
-		jgrade = new JLabel("Grade:", SwingConstants.RIGHT);
+		jgrade = new JLabel("年级:", SwingConstants.RIGHT);
 		grade = new JTextField();
-		button1 = new JButton("Add");
-		button2 = new JButton("Cancel");
+		button1 = new JButton("添加");
+		button2 = new JButton("取消");
 		
 		//set JLabel's Bounds
 		jnumber.setBounds(80, 20, 65, 26);
@@ -85,22 +85,22 @@ public class AddUser extends JPanel {
 					int k = -1;
 					k = conn.insert(sqlstr);
 					if (number.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "User ID cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "用户 ID 不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if (name.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Name cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "用户名不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if (password.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Password cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "密码不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if (college.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "College cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "学院不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if (subject.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Subject cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "专业不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if (grade.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Grade cannot be Empty!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "年级不能为空！", "添加", JOptionPane.WARNING_MESSAGE);
 					else if (k > -1){
-						JOptionPane.showMessageDialog(null, "Add Successful!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "添加成功！", "添加", JOptionPane.WARNING_MESSAGE);
 						//conn.close();
 					}else
-						JOptionPane.showMessageDialog(null, "Add Failed!", "Add", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "添加失败！", "添加", JOptionPane.WARNING_MESSAGE);
 				}catch (ClassNotFoundException ce){
 					System.out.println("SQLException:" + ce.getMessage());
 				}catch (SQLException ex){

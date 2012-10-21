@@ -31,12 +31,12 @@ public class CheckUser extends JPanel implements ActionListener{
 	String message = "";
 
 	public CheckUser(){
-		checklabel = new JLabel("Check User Information:");
-		checkfield = new JTextField("Please Input the Query");
+		checklabel = new JLabel("查询用户信息:");
+		checkfield = new JTextField("请输入查询条件");
 		checkcbo = new JComboBox();
-		button1 = new JButton("Check");
-		checkcbo.addItem("Check with User ID");
-		checkcbo.addItem("Check with User Name");
+		button1 = new JButton("查询");
+		checkcbo.addItem("用户 ID 查询");
+		checkcbo.addItem("按用户名查询");
 		
 		//set JPanel Layout
 		//jp.setLayout(new FlowLayout());
@@ -58,12 +58,12 @@ public class CheckUser extends JPanel implements ActionListener{
 		this.setLayout(new BorderLayout());
 		this.add(jp, BorderLayout.NORTH);
 
-		vector2.add("User ID");
-		vector2.add("Name");
-		vector2.add("Password");
-		vector2.add("College");
-		vector2.add("Subject");
-		vector2.add("Grade");
+		vector2.add("用户 ID");
+		vector2.add("用户名");
+		vector2.add("密码");
+		vector2.add("学院");
+		vector2.add("专业");
+		vector2.add("年级");
 		
 		//add ActionListener for button1
 		button1.addActionListener(this);
@@ -77,9 +77,9 @@ public class CheckUser extends JPanel implements ActionListener{
 		searchf = checkfield.getText().trim();
 		{
 			if(searchf.equals(""))
-				JOptionPane.showMessageDialog(null, "Check Query cannot be Empty!", "Check", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "查询条件不能为空！", "查询", JOptionPane.WARNING_MESSAGE);
 			else if(numorname.equals(""))
-				JOptionPane.showMessageDialog(null, "Check Query cannot be Empty!", "Check", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "查询条件不能为空！", "查询", JOptionPane.WARNING_MESSAGE);
 			else
 				connect("checkuser" + "/" + searchf + "/" + numorname);
 		}		
@@ -117,14 +117,14 @@ public class CheckUser extends JPanel implements ActionListener{
 				jspane = new JScrollPane(table);
 				this.add(jspane, BorderLayout.CENTER);
 			}catch(IOException e){
-				System.out.println("Unable to Obtain Information");					
+				System.out.println("无法获取用户信息");					
 				}
 			//close data stream and Socket object
 			output.close();
 			input.close();
 			socket.close();
 			}catch(EOFException eof){
-				System.out.println("Server Outages");
+				System.out.println("服务器中断");
 				}catch(IOException e){
 					e.printStackTrace();
 					}

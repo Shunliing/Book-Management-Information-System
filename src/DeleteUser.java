@@ -17,20 +17,20 @@ public class DeleteUser extends JPanel{
 
 	public DeleteUser(){
 		this.setLayout(null);
-		jnumber = new JLabel("User ID:", SwingConstants.RIGHT);
+		jnumber = new JLabel("用户 ID:", SwingConstants.RIGHT);
 		number = new JTextField();
-		jname = new JLabel("Name:", SwingConstants.RIGHT);
+		jname = new JLabel("用户名:", SwingConstants.RIGHT);
 		name = new JTextField();
-		jpassword = new JLabel("Password:", SwingConstants.RIGHT);
+		jpassword = new JLabel("密码:", SwingConstants.RIGHT);
 		password = new JPasswordField();
-		jcollege = new JLabel("College:", SwingConstants.RIGHT);
+		jcollege = new JLabel("学院:", SwingConstants.RIGHT);
 		college = new JTextField();
-		jsubject = new JLabel("Subject:", SwingConstants.RIGHT);
+		jsubject = new JLabel("专业:", SwingConstants.RIGHT);
 		subject = new JTextField();
-		jgrade = new JLabel("Grade:", SwingConstants.RIGHT);
+		jgrade = new JLabel("年级:", SwingConstants.RIGHT);
 		grade = new JTextField();
-		button1 = new JButton("Check");
-		button2 = new JButton("Delete");
+		button1 = new JButton("查询");
+		button2 = new JButton("删除");
 		
 		//set Controller's Bounds
 		jnumber.setBounds(80, 20, 65, 26);
@@ -76,7 +76,7 @@ public class DeleteUser extends JPanel{
 			public void actionPerformed(ActionEvent e){
 				try{
 					if(number.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Student ID cannot be Empty!", "Delete", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "用户 ID 不能为空！", "删除", JOptionPane.WARNING_MESSAGE);
 					String sqlstr1;
 					JdbcFiles conn = new JdbcFiles();
 					sqlstr1 = "select number,name,password,college,subject,grade from users where number='"+number.getText()+"'";
@@ -90,7 +90,7 @@ public class DeleteUser extends JPanel{
 							   grade.setText(result.getString("grade"));
 						   }
 					}else
-						JOptionPane.showMessageDialog(null, "Student Information Not Found.", "Delete",JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "用户信息未找到！", "删除",JOptionPane.WARNING_MESSAGE);
 					   }catch (ClassNotFoundException ce) {
 						   System.out.println("SQLException:" + ce.getMessage());
 						   }catch (SQLException ex) {
@@ -114,22 +114,22 @@ public class DeleteUser extends JPanel{
 					k=conn1.insert(sqlstr2);
 					
 					if(number.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Student ID cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);	
+						JOptionPane.showMessageDialog(null, "用户 ID 不能为空！","修改",JOptionPane.WARNING_MESSAGE);	
 					else if(name.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Name cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);	
+						JOptionPane.showMessageDialog(null, "用户名不能为空！","修改",JOptionPane.WARNING_MESSAGE);	
 					else if(password.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Password cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);	
+						JOptionPane.showMessageDialog(null, "密码不能为空！","修改",JOptionPane.WARNING_MESSAGE);	
 					else if(college.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "College cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);	
+						JOptionPane.showMessageDialog(null, "学院不能为空！","修改",JOptionPane.WARNING_MESSAGE);	
 					else if(subject.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Subject cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);	
+						JOptionPane.showMessageDialog(null, "专业不能为空！","修改",JOptionPane.WARNING_MESSAGE);	
 					else if(grade.getText().toString().equals(""))
-						JOptionPane.showMessageDialog(null, "Grade cannot be Empty!","Edit",JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "年级不能为空！","修改",JOptionPane.WARNING_MESSAGE);
 					else if (k > -1){
-						JOptionPane.showMessageDialog(null, "Delete Successful!", "Delete",JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "删除成功！", "删除",JOptionPane.WARNING_MESSAGE);
 						//conn1.close();
 						} else
-							JOptionPane.showMessageDialog(null, "Delete Failed!", "Delete",JOptionPane.WARNING_MESSAGE);									
+							JOptionPane.showMessageDialog(null, "删除失败！", "删除",JOptionPane.WARNING_MESSAGE);									
 					}catch(ClassNotFoundException ce){
 						System.out.println("SQLException:"+ce.getMessage());
 						
